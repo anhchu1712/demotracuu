@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tra Cứu Điểm Thi THPT Quốc Gia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: white;
+        }
+        .header {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .content {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .input-group {
+            margin: 10px 0;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .captcha {
+            display: flex;
+            align-items: center;
+        }
+        .captcha img {
+            margin-left: 10px;
+        }
+        .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .result p {
+            margin: 5px 0;
+        }
+        .result .subjects {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+        }
+        .result .subjects li {
+            flex: 1 1 14%;
+            margin: 0 2%;
+        }
+        @media screen and (max-width: 600px) {
+            .result .subjects li {
+                flex: 1 1 45%;
+                margin: 5px 2%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BỘ GIÁO DỤC VÀ ĐÀO TẠO</h1>
+            <h2>TRANG THÔNG TIN KỲ THI QUỐC GIA</h2>
+        </div>
+        <div class="content">
+            <h3>SỞ GIÁO DỤC VÀ ĐÀO TẠO TP HỒ CHÍ MINH</h3>
+            <h4>TRA CỨU ĐIỂM THI THPT QUỐC GIA</h4>
+            <form>
+                <div class="input-group">
+                    <label for="so-bao-danh">Số báo danh</label>
+                    <input type="text" id="so-bao-danh" name="so-bao-danh" value="0206891">
+                </div>
+                <div class="input-group">
+                    <label for="ma-xac-nhan">Mã xác nhận</label>
+                    <div class="captcha">
+                        <input type="text" id="ma-xac-nhan" name="ma-xac-nhan" value="PNXF1">
+                        <img src="data:image/png;base64,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" alt="Captcha Image">
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Tra cứu">
+                </div>
+            </form>
+            <div class="result">
+                <h4>Họ và tên: CHU HẢI ANH</h4>
+                <p>Điểm các môn:</p>
+                <ul class="subjects">
+                    
+                    <li><b>Toán: 8.60</b></li>
+                    
+                    <li><b>Vật lí: 8.50</b></li>
+                    <li><b>Hóa học: 7.50</b></li>
+                    
+                    <li><b>Tiếng Anh: 8.60</b></li>
+                    
+            
+                </ul>
+                <p><i>Ghi chú: Dấu (*) thể hiện điểm thi sau phúc khảo</i></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
